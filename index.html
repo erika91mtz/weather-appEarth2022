@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>SpaceToursim.Earth-Weather</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Truculenta:opsz,wght@12..72,800&family=Zilla+Slab:ital,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/5037c0cf06.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        Greetings and Welcome to Earth!
+        <br />
+        <img src="images/spacepic.jpg" class="space-travel" />
+      </h1>
+      <h2>
+        <i class="fa-solid fa-earth-americas earth-icon"></i> Weather Conditons
+      </h2>
+      <h3>Powered by SpaceTourism.Earth</h3>
+      <form id="location-form">
+        <div col-3>
+          <input
+          type="text"
+          placeholder="Search a city on Earth"
+          autocomplete="off"
+          autofocus="on"
+          id="search-city-input"
+          ;
+        /> 
+        <input type="submit" value="Search" class="btn btn-primary" />
+        </div>
+      </form>
+      <button class="btn btn-success" id="currentLocationButton"> Current Location</button>
+      <br />
+      <div class="col-3">
+      <div class="card-one">
+        <h5 class="card-header-one">
+          Planet Earth 🌍
+          <div id="time-now">The time Now</div>
+        </h5>
+        <div class="card-body-one">
+          <h3 id="city-name-one">
+           <br />
+          </h3>
+          <p> <span class="temperatureOne" id="temp-one"></span>
+            <span class="units">℉</span>
+            <br />
+             <div id="card-text-one"> 
+            </div>
+            <i class="fa-solid fa-sun sun-icon"></i></span>
+            <ul>
+              <li>Humidity: <span id="humidity-one">
+              </span>%
+              </li>
+              <li>Wind: <span id="wind-one">
+              </span>mph
+              </li>
+            </ul>
+          </p>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-3">
+            <div class="card-two">
+              <h5 class="card-header-two">Sunday</h5>
+              <div class="card-body-two">
+                <h5 id="city-name-two">Denver</h5>
+                <span class="temperatureTwo" id="temp-two"> 75 </span>
+                <span class="units">℉</span>
+                <p class="card-text-two">
+                  Cloudy and Warm
+                  <br />
+                  <i class="fa-solid fa-cloud-sun cloud-sun-icon"></i>
+                  <ul>
+              <li>Humidity: <span id="humidity-one">
+              </span>%
+              </li>
+              <li>Wind: <span id="wind-one">
+              </span>mph
+              </li>
+            </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card-three">
+              <h5 class="card-header-three">Monday</h5>
+              <div class="card-body-three">
+                <h5 id="city-name-three">Denver</h5>
+                <span class="temperatureThree" id="temp-three"> 78</span>
+                <span class="units">℉</span>
+                <p class="card-text-three">
+                  Sunny
+                  <br />
+                   <i class="fa-solid fa-sun sun-icon"></i>
+                  <ul>
+              <li>Humidity: <span id="humidity-one">
+              </span>%
+              </li>
+              <li>Wind: <span id="wind-one">
+              </span>mph
+              </li>
+            </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card-four">
+              <h5 class="card-header-four">Tuesday</h5>
+              <div class="card-body-four">
+                <h5 id="city-name-four">Denver</h5>
+                <span class="temperatureFour" id="temp-four"> 71</span>
+                <span class="units">℉</span>
+                <p class="card-text-four">
+                  Cloudy
+                  <br />
+                  <i class="fa-solid fa-cloud cloud-icon"></i>
+                  <ul>
+              <li>Humidity: <span id="humidity-one">
+              </span>%
+              </li>
+              <li>Wind: <span id="wind-one">
+              </span>mph
+              </li>
+            </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card-five">
+              <h5 class="card-header-five">Wednesday</h5>
+              <div class="card-body-five">
+                <h5 id="city-name-five">Denver</h5>
+                <span class="temperatureFive" id="temp-five">66</span>
+                <span class="units">℉</span>
+                <p class="card-text-five">
+                  Rainy
+                  <br />
+                   <i class="fa-solid fa-cloud-showers-heavy showers-icon"></i>
+                <ul>
+              <li>Humidity: <span id="humidity-one">
+              </span>%
+              </li>
+              <li>Wind: <span id="wind-one">
+              </span>mph
+              </li>
+            </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card-six">
+              <h5 class="card-header-six">Thursday</h5>
+              <div class="card-body-six">
+                <h5 id="city-name-six">Denver</h5>
+                 <span class="temperatureSix" id="temp-six">54</span>
+                 <span class="units">℉</span>
+                <p class="card-text-six">
+                  Rainy
+                  <br />
+                 <i class="fa-solid fa-cloud-showers-heavy showers-icon"></i>
+                <ul>
+              <li>Humidity: <span id="humidity-one">
+              </span>%
+              </li>
+              <li>Wind: <span id="wind-one">
+              </span>mph
+              </li>
+            </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card-seven">
+              <h5 class="card-header-seven">Friday</h5>
+              <div class="card-body-seven">
+                <h5 id="city-name-seven">Denver</h5>
+                <span class="temperatureSeven" id="temp-seven">70</span>
+                <span class="units">℉</span>
+                <p class="card-text-seven">
+                  Sunny and Windy
+                  <br />
+                  <i class="fa-solid fa-wind wind-icon"></i>
+              <ul>
+              <li>Humidity: <span id="humidity-one">
+              </span>%
+              </li>
+              <li>Wind: <span id="wind-one">
+              </span>mph
+              </li>
+            </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
